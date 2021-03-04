@@ -1,0 +1,15 @@
+.noteful {
+    padding: 10px;
+    background-color: blanchedalmond;
+    color: indigo;
+    text-align: center;
+
+}
+
+h1 {
+    color: teal;
+}
+
+.app {
+    display: flex;
+}
