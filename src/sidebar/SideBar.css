@@ -1,5 +1,11 @@
-.side {
-    padding: 10px;
-    width: 25%;
-    background-color: turquoise;
+li {
+    list-style-type: none;
+}
+
+.addFolder {
+    border-style: dotted;
+    border-color: turquoise;
+    padding: 2px;
+    border-radius: 5px;
+
 }

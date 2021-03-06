@@ -4,3 +4,10 @@
     background-color: coral;
     color: white;
 }
+
+.mainpage__main .addNote {
+    border-style: dotted;
+    border-color: teal;
+    padding: 2px;
+    border-radius: 5px;
+}

@@ -1,15 +1,53 @@
-.noteful {
+.App {
     padding: 10px;
-    background-color: blanchedalmond;
-    color: indigo;
+    background-color: turquoise;
     text-align: center;
 
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: green;
+}
+
 h1 {
+    color: black;
+}
+
+button {
+    border-radius: 5px;
+}
+
+.mainpage {
+    display: flex;
+}
+
+.sidebar {
+    text-align: left;
+    padding: 10px;
+    width: 25%;
+    background-color: black;
+    color: turquoise
+}
+
+
+
+.main {
+    text-align: left;
+    padding: 10px;
+    width: 75%;
+    background-color: coral;
     color: teal;
 }
 
-.app {
-    display: flex;
+.main a {
+    color: black;
+}
+
+.main a:hover {
+    color: green;
 }

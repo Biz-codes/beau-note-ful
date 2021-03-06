@@ -35,6 +35,7 @@ export default class Main extends React.Component {
                     )}
                 </ul>
                 <Link
+                    className='addNote'
                     id='add-note-link'
                     to='/add-note'
                 >

@@ -19,9 +19,9 @@ export default class SideNav extends React.Component {
 
         const { noteId } = this.props.match.params;
 
-        const noteFolderId = notes.filter(note => note.id == noteId)
+        const noteFolderId = notes.filter(note => note.id === noteId)
 
-        const idForFolder = folders.filter(folder => folder.id == 2)
+        const idForFolder = folders.filter(folder => folder.id === 2)
 
         const getFolderName = (noteId, folders = []) => (
             (noteFolderId.folder_id === idForFolder.id)
@@ -36,7 +36,7 @@ export default class SideNav extends React.Component {
                     type="button"
                     id="go-back-link"
                     onClick={() => this.props.history.goBack()}>
-                    Go back
+                    Back
                 </button>
                 </li>
             </div>

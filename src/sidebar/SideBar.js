@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import NotefulContext from '../NotefulContext';
 import PropTypes from 'prop-types';
+import './SideBar.css'
 
 export default class SideBar extends React.Component {
 
@@ -18,6 +19,7 @@ export default class SideBar extends React.Component {
 
         return (
             <nav className="nav">
+                <div className="side">
                 <div className="folderList">
                     {folders.map(folder =>
                         <li key={folder.id} >
@@ -28,10 +30,12 @@ export default class SideBar extends React.Component {
                         </li>)}
                 </div>
                 <Link 
+                    className='addFolder'
                     id='add-folder-link' 
                     to='/add-folder'>
                         Add Folder
-                    </Link>
+                </Link>
+                </div>
             </nav>
         )
     }
