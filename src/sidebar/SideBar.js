@@ -1,16 +1,48 @@
-import React, { Component } from 'react';
-import './SideBar.css';
-import SideNav from '../sidenav/SideNav'
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import NotefulContext from '../NotefulContext';
+import PropTypes from 'prop-types';
 
-class SideBar extends Component {
+export default class SideBar extends React.Component {
+
+    static contextType = NotefulContext;
+
     render() {
+
+        const { folders = [] } = this.context
+        const folderId = folders.map(folder => folder.id)
+        const findFolder = (folders = [], folderId) =>
+            folders.find(folder => folder.id === folderId)
+
+        const folderDisplay = findFolder(folders, folderId);
+
         return (
-            <div className="side">
-                <p>This will be the side bar</p>
-                <SideNav />
-            </div>
+            <nav className="nav">
+                <div className="folderList">
+                    {folders.map(folder =>
+                        <li key={folder.id} >
+                                <NavLink to={`/folder/${folder.id}`} className={folder.id === folderId ? ' active' : 'not-active'} >
+                                <h3>{folder.name}</h3>
+                            </NavLink>
+                            {folderDisplay}
+                        </li>)}
+                </div>
+                <Link 
+                    id='add-folder-link' 
+                    to='/add-folder'>
+                        Add Folder
+                    </Link>
+            </nav>
         )
     }
 }
 
-export default SideBar
+SideBar.defaultProps = {
+    folders: [],
+}
+
+SideBar.propTypes = {
+    folders: PropTypes.array,
+    id: PropTypes.string,
+    name: PropTypes.string
+}

@@ -1,14 +1,46 @@
-import React, { Component } from 'react';
-import './Main.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import NotefulContext from '../NotefulContext';
+import Note from '../note/Note'
 
-class Main extends Component {
+export default class Main extends React.Component {
+    static defaultProps = {
+        match: {
+            params: {}
+        }
+    }
+    static contextType = NotefulContext
+
     render() {
-        return (
-            <div className="main">
-                <p>This will be the main container.</p>
-            </div>
+        const { folderId } = this.props.match.params
+        const { notes } = this.context
+        const getNotesForFolder = (notes = [], folderId) => (
+            (!folderId)
+                ? notes
+                : notes.filter(note => note.folderId === folderId)
         )
+
+        const notesForFolder = getNotesForFolder(notes, folderId)
+        return (
+            <div className="mainpage__main">
+                <ul className="noteList">
+                    {notesForFolder.map(note =>
+                        <li key={note.id}>
+                            <Note
+                                id={note.id}
+                                name={note.name}
+                                modified={note.modified}
+                            />
+                        </li>
+                    )}
+                </ul>
+                <Link
+                    id='add-note-link'
+                    to='/add-note'
+                >
+                    Add note
+                </Link>
+            </div>
+        );
     }
 }
-
-export default Main;
