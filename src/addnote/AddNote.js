@@ -124,6 +124,9 @@ export default class AddNote extends Component {
                     name="name"
                     id="name"
                     defaultValue=""
+                    aria-label="Note name"
+                    aria-required='true'
+                    aria-describedby="error"
                     onChange={this.handleChange}
                 />
 
@@ -136,6 +139,9 @@ export default class AddNote extends Component {
                     name="content"
                     id="content"
                     defaultValue=""
+                    aria-label="Note content"
+                    aria-required='true'
+                    aria-describedby="error"
                     onChange={this.handleChange}
                 />
                 <select

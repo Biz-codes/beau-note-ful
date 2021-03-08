@@ -98,6 +98,9 @@ export default class AddFolder extends React.Component {
                         type="text"
                         name="name"
                         id="name"
+                        aria-label="Folder name"
+                        aria-required='true'
+                        aria-describedby="error"
                         onChange={this.handleChange}
                     />
                     {errors.name.length > 0 && (
