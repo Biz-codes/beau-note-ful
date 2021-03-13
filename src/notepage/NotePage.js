@@ -56,7 +56,7 @@ export default class NotePage extends React.Component {
         {getNotes}
         <button
           type="button"
-          id='delete-note'
+          className='delete-note'
           onClick={() => this.handleDeleteNote(this.props.id, this.context.deleteNote)}>
           Delete Note
         </button>

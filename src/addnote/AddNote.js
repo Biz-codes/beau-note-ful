@@ -155,7 +155,7 @@ export default class AddNote extends Component {
                 </select>
                 <button
                     type="submit"
-                    id="submit-btn"
+                    className="submit-btn"
                     disabled={
                         this.state.formValid === false
                     }

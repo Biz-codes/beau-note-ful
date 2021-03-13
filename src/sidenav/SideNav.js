@@ -34,7 +34,7 @@ export default class SideNav extends React.Component {
                 <li id="go-back">
                 <button
                     type="button"
-                    id="go-back-link"
+                    className="go-back-link"
                     onClick={() => this.props.history.goBack()}>
                     Back
                 </button>

@@ -47,7 +47,7 @@ export default class Note extends React.Component {
                     </Link>
                     <button
                         type="button"
-                        id="delete-note"
+                        className="delete-note"
                         onClick={this.handleDeleteNote}>
                         Delete Note
                     </button>

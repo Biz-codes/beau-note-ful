@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import NotefulContext from '../NotefulContext';
 import Note from '../note/Note'
@@ -25,6 +25,7 @@ export default class Main extends React.Component {
             <div className="mainpage__main">
                 <ul className="noteList">
                     {notesForFolder.map(note =>
+                        <Fragment>
                         <li key={note.id}>
                             <Note
                                 id={note.id}
@@ -32,6 +33,7 @@ export default class Main extends React.Component {
                                 modified={note.modified}
                             />
                         </li>
+                        </Fragment>
                     )}
                 </ul>
                 <Link

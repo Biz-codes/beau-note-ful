@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import NotefulContext from '../NotefulContext';
 import PropTypes from 'prop-types';
@@ -20,15 +20,17 @@ export default class SideBar extends React.Component {
         return (
             <nav className="nav">
                 <div className="side">
-                <div className="folderList">
+                <ul className="folderList">
                     {folders.map(folder =>
+                        <Fragment>
                         <li key={folder.id} >
                                 <NavLink to={`/folder/${folder.id}`} className={folder.id === folderId ? ' active' : 'not-active'} >
                                 <h3>{folder.name}</h3>
                             </NavLink>
                             {folderDisplay}
-                        </li>)}
-                </div>
+                        </li>
+                        </Fragment>)}
+                </ul>
                 <Link 
                     className='addFolder'
                     id='add-folder-link' 

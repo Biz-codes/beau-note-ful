@@ -107,7 +107,7 @@ export default class AddFolder extends React.Component {
                         <ValidationError message={errors.name} />)}
                     <button
                         type="submit"
-                        id="submit-btn"
+                        className="submit-btn"
                         disabled={this.state.formValid === false}
                     >
                         Submit
